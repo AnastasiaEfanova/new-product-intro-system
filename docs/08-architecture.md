@@ -75,7 +75,7 @@ New Product Intro System проектируется как отдельная п
 единая программная система, с которой взаимодействуют бизнес-пользователи
 и существующие информационные системы сети.
 
-![C4 System Context](images/C4 System Context.png)
+![C4 System Context](../images/C4%20System%20Context.png)
 
 ### Пользователи системы
 
@@ -128,7 +128,7 @@ New Product Intro System не заменяет эти системы. Она о�
 На уровне Container New Product Intro System декомпозирована на отдельные
 сервисы и инфраструктурные компоненты.
 
-![C4 Container](images/C4 Container.png)
+![C4 Container](../images/C4%20Container.png)
 
 Основными компонентами являются:
 
@@ -230,7 +230,7 @@ Web Application не обращается непосредственно к би
 
 Описание REST API:
 
-- [`Product Management API (OpenAPI 3.0)`](API/product-management-api.yaml)
+- [`Product Management API (OpenAPI 3.0)`](../API/product-management-api.yaml)
 
 Product Management Service имеет собственную **Product DB**.
 
@@ -250,7 +250,7 @@ Product Management Service имеет собственную **Product DB**.
 Для Product Management Service выполнена дополнительная декомпозиция
 на уровне C4 Component.
 
-![C4 Product Management Service](images/C4 Component.png)
+![C4 Product Management Service](../images/C4%20Component.png)
 
 Основные компоненты:
 
@@ -449,6 +449,10 @@ Product Management Service не должен знать:
 - особенности системы заказов;
 - правила публикации в социальной сети;
 - протокол конкретной внешней системы.
+
+Описание REST API:
+
+- [`Integration API (OpenAPI 3.0)`](../API/integration-api.yaml)
 
 Эта ответственность сосредоточена в Integration Service.
 

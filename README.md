@@ -50,8 +50,9 @@
 
 ### Архитектурные схемы
 
-- [C4 — System Context](images/C4-System-Context.png)
-- [C4 — Container](images/C4-Container.png)
+- [C4 — System Context](/images/C4%20System%20Context.png)
+- [C4 — Container](/images/C4%20Container.png)
+- [C4 — Component](/images/C4%20Component.png)
 
 ---
 
