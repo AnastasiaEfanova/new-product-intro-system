@@ -1,0 +1,208 @@
+openapi: 3.0.3
+
+info:
+  title: New Product Intro - Integration API
+  version: 1.0.0
+  description: >
+    REST API Integration Service.
+    Предназначен для получения информации
+    о состоянии интеграционных задач.
+
+servers:
+  - url: https://api.new-product-intro.example.com/api/v1
+
+tags:
+  - name: Integration Tasks
+    description: Контроль состояния интеграционных операций
+
+paths:
+
+  /integration-tasks:
+    get:
+      tags:
+        - Integration Tasks
+      summary: Получить список интеграционных задач
+      operationId: getIntegrationTasks
+
+      security:
+        - bearerAuth: []
+
+      parameters:
+
+        - name: productId
+          in: query
+          required: false
+          description: Фильтрация задач по карточке блюда
+          schema:
+            type: string
+            format: uuid
+
+        - name: status
+          in: query
+          required: false
+          description: Фильтрация по состоянию задачи
+          schema:
+            $ref: '#/components/schemas/IntegrationStatus'
+
+        - name: targetSystem
+          in: query
+          required: false
+          description: Фильтрация по целевой системе
+          schema:
+            $ref: '#/components/schemas/TargetSystem'
+
+      responses:
+
+        '200':
+          description: Список интеграционных задач
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IntegrationTask'
+
+        '401':
+          description: Пользователь не аутентифицирован
+
+        '403':
+          description: Недостаточно прав
+
+        '500':
+          description: Внутренняя ошибка Integration Service
+
+
+  /integration-tasks/{taskId}:
+    get:
+      tags:
+        - Integration Tasks
+      summary: Получить состояние интеграционной задачи
+      operationId: getIntegrationTask
+
+      security:
+        - bearerAuth: []
+
+      parameters:
+
+        - name: taskId
+          in: path
+          required: true
+          description: Идентификатор интеграционной задачи
+          schema:
+            type: string
+            format: uuid
+
+      responses:
+
+        '200':
+          description: Состояние интеграционной задачи
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IntegrationTask'
+
+        '401':
+          description: Пользователь не аутентифицирован
+
+        '403':
+          description: Недостаточно прав
+
+        '404':
+          description: Интеграционная задача не найдена
+
+        '500':
+          description: Внутренняя ошибка Integration Service
+
+
+components:
+
+  securitySchemes:
+
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+
+  schemas:
+
+    IntegrationTask:
+      type: object
+      required:
+        - id
+        - productId
+        - targetSystem
+        - operation
+        - status
+        - retryCount
+        - createdAt
+
+      properties:
+
+        id:
+          type: string
+          format: uuid
+          example: 51c93ec1-b71d-49f3-a223-9dfc80d753ad
+
+        productId:
+          type: string
+          format: uuid
+          example: 550e8400-e29b-41d4-a716-446655440000
+
+        targetSystem:
+          $ref: '#/components/schemas/TargetSystem'
+
+        operation:
+          type: string
+          description: Выполняемая интеграционная операция
+          enum:
+            - CREATE_PRODUCT
+            - UPDATE_PRODUCT
+            - PUBLISH_PRODUCT
+
+        status:
+          $ref: '#/components/schemas/IntegrationStatus'
+
+        retryCount:
+          type: integer
+          minimum: 0
+          example: 2
+
+        lastError:
+          type: string
+          nullable: true
+          example: External system unavailable
+
+        createdAt:
+          type: string
+          format: date-time
+          example: '2026-08-10T12:00:00Z'
+
+        updatedAt:
+          type: string
+          format: date-time
+          example: '2026-08-10T12:03:00Z'
+
+
+    IntegrationStatus:
+      type: string
+      description: Текущее состояние задачи синхронизации
+      enum:
+        - CREATED
+        - IN_PROGRESS
+        - SUCCESS
+        - RETRY
+        - FAILED
+
+
+    TargetSystem:
+      type: string
+      description: Целевая информационная система
+      enum:
+        - ORDER_MANAGEMENT
+        - WAREHOUSE
+        - LOGISTICS
+        - PRODUCTION
+        - WEB_APPLICATION
+        - DELIVERY_SERVICE
+        - SOCIAL_NETWORK
