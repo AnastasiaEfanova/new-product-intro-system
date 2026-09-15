@@ -16,15 +16,15 @@
 
 | № | Раздел | Описание |
 |---|---|---|
-| 1 | [Общая информация](docs/01-general-information.md) | Назначение проекта, предпосылки и общая информация |
-| 2 | [Цели внедрения проекта](docs/02-project-goals.md) | Цели автоматизации и ожидаемые результаты |
-| 3 | [Описание проекта и основных задач](docs/03-project-description.md) | Описание проекта, As-Is / To-Be и основные решаемые задачи |
-| 4 | [Roadmap проекта](docs/04-roadmap.md) | Этапы реализации, спринты, Roadmap, диаграмма Ганта и ключевые вехи |
-| 5 | [Команда проекта](docs/05-project-team.md) | Состав проектной команды, роли и зоны ответственности |
-| 6 | [Риски проекта](docs/06-risks.md) | Реестр рисков, матрица рисков, RBS и мероприятия по управлению |
-| 7 | [Описание выбранного решения](docs/07-solution-description.md) | Концепция New Product Intro System и основные функциональные возможности |
-| 8 | [Архитектура проекта](docs/08-architecture.md) | C4, сервисы, интеграции, Kafka, Outbox, НФТ и результаты ATAM |
-| 9 | [Заключение](docs/09-conclusion.md) | Итоги проекта, ожидаемый эффект и личные точки роста |
+| 1 | [Общая информация](https://github.com/AnastasiaEfanova/new-product-intro-system/blob/main/docs/01-overview.md) | Назначение проекта, предпосылки и общая информация |
+| 2 | [Цели внедрения проекта](https://github.com/AnastasiaEfanova/new-product-intro-system/blob/main/docs/02-goals.md) | Цели автоматизации и ожидаемые результаты |
+| 3 | [Описание проекта и основных задач](https://github.com/AnastasiaEfanova/new-product-intro-system/blob/main/docs/03-project-description.md) | Описание проекта, As-Is / To-Be и основные решаемые задачи |
+| 4 | [Roadmap проекта](https://github.com/AnastasiaEfanova/new-product-intro-system/blob/main/docs/04-roadmap.md) | Этапы реализации, спринты, Roadmap, диаграмма Ганта и ключевые вехи |
+| 5 | [Команда проекта](https://github.com/AnastasiaEfanova/new-product-intro-system/blob/main/docs/05-team.md) | Состав проектной команды, роли и зоны ответственности |
+| 6 | [Риски проекта](https://github.com/AnastasiaEfanova/new-product-intro-system/blob/main/docs/06-risks.md) | Реестр рисков, матрица рисков, RBS и мероприятия по управлению |
+| 7 | [Описание выбранного решения](https://github.com/AnastasiaEfanova/new-product-intro-system/blob/main/docs/07-solution.md) | Концепция New Product Intro System и основные функциональные возможности |
+| 8 | [Архитектура проекта](https://github.com/AnastasiaEfanova/new-product-intro-system/blob/main/docs/08-architecture.md) | C4, сервисы, интеграции, Kafka, Outbox, НФТ и результаты ATAM |
+| 9 | [Заключение](https://github.com/AnastasiaEfanova/new-product-intro-system/blob/main/docs/09-conclusion.md) | Итоги проекта, ожидаемый эффект и личные точки роста |
 
 ---
 
@@ -46,7 +46,7 @@
 
 Подробное описание:
 
-➡️ **[Перейти к архитектуре проекта](docs/08-architecture.md)**
+➡️ **[Перейти к архитектуре проекта](https://github.com/AnastasiaEfanova/new-product-intro-system/blob/main/docs/08-architecture.md)**
 
 ### Архитектурные схемы
 
@@ -62,8 +62,8 @@
 
 | API | Назначение |
 |---|---|
-| [Product Management API](api/product-management-api.yaml) | Создание, получение и изменение карточек новых блюд |
-| [Integration API](api/integration-api.yaml) | Получение состояния интеграционных задач и результатов синхронизации |
+| [Product Management API](API/product-management-api.yaml) | Создание, получение и изменение карточек новых блюд |
+| [Integration API](API/integration-api.yaml) | Получение состояния интеграционных задач и результатов синхронизации |
 
 API-контракты хранятся в одном Git-репозитории с проектной документацией
 и версионируются вместе с изменениями системы.
