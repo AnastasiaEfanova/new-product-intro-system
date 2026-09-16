@@ -132,24 +132,24 @@ API-контракты хранятся в одном Git-репозитории
 ├── README.md
 │
 ├── docs/
-│   ├── 01-general-information.md
-│   ├── 02-project-goals.md
+│   ├── 01-overview.md
+│   ├── 02-goals.md
 │   ├── 03-project-description.md
 │   ├── 04-roadmap.md
-│   ├── 05-project-team.md
+│   ├── 05-team.md
 │   ├── 06-risks.md
-│   ├── 07-solution-description.md
+│   ├── 07-solution.md
 │   ├── 08-architecture.md
 │   └── 09-conclusion.md
 │
-├── api/
+├── API/
 │   ├── product-management-api.yaml
 │   └── integration-api.yaml
 │
 └── images/
-    ├── C4-System-Context.png
-    ├── C4-Container.png
-    └── ...
+    ├── C4 System Context.png
+    ├── C4 Container.png
+    └── C4 Component.png
 ```
 
 ---
